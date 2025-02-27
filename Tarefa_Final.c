@@ -95,24 +95,19 @@ int main()
     ssd1306_fill(&ssd, false);
     ssd1306_rect(&ssd, 2, 2, 124, 60, true, false);
 
-    // Título mais curto e centralizado
+    // Título m
     ssd1306_draw_string(&ssd, "EXERCICIO", 35, 6);
 
-    // Barra de progresso da força atual
-    ssd1306_draw_string(&ssd, "Forca:", 6, 16);
-    int barra_largura = (valor_forca * 50) / 4095; // Reduzido para 50 pixels
-    ssd1306_rect(&ssd, 45, 17, barra_largura, 4, true, true);
-
     // Informações em duas colunas
-    // Coluna esquerda
-    ssd1306_draw_string(&ssd, "Reps:", 6, 28);
+   
+    ssd1306_draw_string(&ssd, "R", 6, 28);
     ssd1306_draw_string(&ssd, str_reps, 45, 28);
 
-    ssd1306_draw_string(&ssd, "Tempo:", 6, 40);
+    ssd1306_draw_string(&ssd, "T", 6, 40);
     ssd1306_draw_string(&ssd, str_tempo, 45, 40);
 
-    // Coluna direita
-    ssd1306_draw_string(&ssd, "Kcal:", 6, 52);
+    
+    ssd1306_draw_string(&ssd, "K", 6, 52);
     ssd1306_draw_string(&ssd, str_calorias, 45, 52);
 
     ssd1306_send_data(&ssd);
